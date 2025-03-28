@@ -123,10 +123,11 @@ async def start(client, message):
             )
         return
     
-    if data.split("-", 1)[0] == "BATCH":
+if data.split("-", 1)[0] == "BATCH":
     sts = await message.reply("<b>Please wait...</b>")
     file_id = data.split("-", 1)[1]
     msgs = BATCH_FILES.get(file_id)
+    
     if not msgs:
         file = await client.download_media(file_id)
         try: 
@@ -135,8 +136,10 @@ async def start(client, message):
         except:
             await sts.edit("FAILED")
             return await client.send_message(LOG_CHANNEL, "UNABLE TO OPEN FILE.")
+        
         os.remove(file)
         BATCH_FILES[file_id] = msgs
+
     for msg in msgs:
         title = msg.get("title")
         size = get_size(int(msg.get("size", 0)))
@@ -200,7 +203,11 @@ elif data.split("-", 1)[0] == "DSTORE":
                 f_caption = getattr(msg, 'caption', file_name)
 
             try:
-                await msg.copy(message.chat.id, caption=f_caption, protect_content=True if protect == "/pbatch" else False)
+                await msg.copy(
+                    message.chat.id, 
+                    caption=f_caption, 
+                    protect_content=True if protect == "/pbatch" else False
+                )
             except Exception as e:
                 logger.exception(e)
                 continue
@@ -208,7 +215,10 @@ elif data.split("-", 1)[0] == "DSTORE":
             continue
         else:
             try:
-                await msg.copy(message.chat.id, protect_content=True if protect == "/pbatch" else False)
+                await msg.copy(
+                    message.chat.id, 
+                    protect_content=True if protect == "/pbatch" else False
+                )
             except Exception as e:
                 logger.exception(e)
                 continue
