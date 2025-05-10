@@ -1,5 +1,8 @@
 class script(object):
-    START_TXT = """<i>ʜᴇʟʟᴏ {},\n\nᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴡᴏʀʟᴅ'ꜱ ᴄᴏᴏʟᴇꜱᴛ ꜱᴇᴀʀᴄʜ ᴇɴɢɪɴᴇ.😍</i>"""
+    START_TXT = """<i>ʜᴇʟʟᴏ {},\n\nᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛʜᴇ ᴡᴏʀʟᴅ'ꜱ ᴄᴏᴏʟᴇꜱᴛ ꜱᴇᴀʀᴄʜ ᴇɴɢɪɴᴇ.😍 
+JUST Type Your Series Name And Get It's Link 
+    🎬 Direct Files Uploaded 👇
+[ https://t.me/+Kjz2HqRquo1hYzI9 ]</i>"""
 
     HELP_TXT = """🙋🏻‍♂️   𝖧𝖾𝗅𝗅𝗈𝗈𝗈  {} 🤓
 
